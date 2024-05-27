@@ -36,16 +36,17 @@ input {
 
 button {
   padding: 0.7em;
-  background: #007bff;
+  background: #3b7497;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
+  transition: 0.2s;
 }
 
 button:hover {
-  background: #0056b3;
+  background: #3283b5;
 }
 
 a {
@@ -65,31 +66,37 @@ a:hover {
   display: flex;
   flex-direction: column;
 }
+
 .account-management {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
 }
+
 .google-signin-container .g-signin2 {
   width: 100% !important;
   display: flex !important;
   justify-content: center !important;
 }
+
 .login-google {
   margin: 30px 0px 30px 0px;
+  color: #ffffff8a;
 }
+
 .background-login {
   background-position: center;
   background-size: cover;
   width: 100%;
-  height: 100%;
-  background-image: url('/assets/img/ea-sports-fc-24-game.jpg');
+  height: 100vh;
+  background-image: url("/assets/img/ea-sports-fc-24-game.jpg");
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   position: relative;
+  z-index: 0;
 }
 
 .background-login::before {
@@ -99,7 +106,7 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #00000077; /* Escurece apenas a imagem de fundo */
+  background: #00000077;
   z-index: 1;
 }
 
@@ -108,17 +115,91 @@ a:hover {
   background: transparent;
   border: 1px solid #ffffff5d;
   background-color: #00000057;
-  color: black; /* Texto preto para contraste */
-  z-index: 2; /* Garante que o formulário fique acima da camada escura */
+  color: black;
+  z-index: 2;
   padding: 20px;
   border-radius: 10px;
   position: relative;
   color: white;
+  opacity: 1; /* Inicia com opacidade total */
 }
-#username, #password {
+#username,
+#password {
   outline: none;
   opacity: 0.9;
   background-color: #0000001f;
   border: 1px solid rgba(255, 255, 255, 0.445);
   color: white;
+  transition: 0.2s;
+}
+
+#username:focus,
+#password:focus {
+  border: 1px solid white;
+  background-color: #5656561f;
+}
+
+/* 'Esqueceu a senha' */
+
+#background-emerges {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+#box-forgot-password {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 340px;
+  width: 270px;
+  background: transparent;
+  border: 1px solid #ffffff5d;
+  background-color: #00000057;
+  color: black;
+  z-index: 2;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+#background-emerges.show {
+  opacity: 1;
+  display: block;
+}
+#box-forgot-password.show {
+  opacity: 1;
+}
+.delet-move {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+#close-icon {
+  font-size: 20px;
+  padding: 10px;
+  background-color: #00000036;
+  border: 1px solid #ffffff5d;
+  color: #ffffff5d;
+  border-radius: 20%;
+  width: 21px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#close-icon:hover {
+  color: white;
+  border: 1px solid white;
+  background-color: #5656561f;
 }

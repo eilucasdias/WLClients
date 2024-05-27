@@ -7,21 +7,28 @@
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/styles.css" />
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <meta
       name="google-signin-client_id"
       content="1007792752142-4odsuekv67pee0c5m95g4cvn3i29afuq.apps.googleusercontent.com"
     />
   </head>
   <body>
-    <div class="background-login">
+    <div class="background-login" id="background-login">
       <form id="login-form">
         <div class="login-group">
           <label for="username">Usuário</label>
-          <input type="text" id="username" name="username" required/><br />
+          <input type="text" id="username" name="username" required /><br />
         </div>
         <div class="login-group">
           <label for="password">Senha</label>
-          <input type="password" id="password" name="password" required/><br />
+          <input type="password" id="password" name="password" required /><br />
         </div>
         <button type="submit">Entrar</button>
         <div class="account-management">
@@ -34,7 +41,13 @@
         </div>
       </form>
     </div>
-
+    <div id="background-emerges">
+      <div id="box-forgot-password">
+        <div class="delet-move">
+          <i class="fas fa-times" id="close-icon"></i>
+        </div>
+      </div>
+    </div>
     <script src="/js/scripts.js"></script>
   </body>
 </html>
