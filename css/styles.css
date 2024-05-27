@@ -84,7 +84,7 @@ a:hover {
   background-size: cover;
   width: 100%;
   height: 100%;
-  background-image: url(/assets/img/ea-sports-fc-24-game.jpg);
+  background-image: url('/assets/img/ea-sports-fc-24-game.jpg');
   display: flex;
   align-items: center;
   justify-content: center;
