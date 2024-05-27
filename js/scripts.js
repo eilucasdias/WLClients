@@ -43,4 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Por favor, insira um e-mail válido.');
         }
     });
+
+    const createAccountLink = document.getElementById('create-account');
+    createAccountLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        
+        // Redirecionar para a página de criação de conta
+        alert('Redirecionar para a página de criação de conta.');
+    });
 });
