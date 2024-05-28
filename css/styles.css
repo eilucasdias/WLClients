@@ -297,3 +297,33 @@ a:hover {
     transform: translateY(-50%);
     cursor: pointer;
 }
+
+.whatsapp-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25d366;
+  color: white;
+  width: auto; /* Ajustado para caber o texto */
+  height: 60px; /* buttonSize: 'large' */
+  border-radius: 30px; /* Para manter o botão arredondado */
+  padding: 0 20px; /* Adiciona espaço ao redor do texto */
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  position: fixed;
+  bottom: 20px; /* buttonPosition: 'right' */
+  right: 20px; /* buttonPosition: 'right' */
+  margin: 10px; /* buttonMargin: 'true' */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-button svg {
+  width: 22px; /* buttonIconSize: '22' */
+  height: 22px; /* buttonIconSize: '22' */
+  margin-right: 10px; /* Espaço entre o ícone e o texto */
+}
+
+.whatsapp-button:hover {
+  background-color: #1da851;
+}
