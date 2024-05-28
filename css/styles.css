@@ -280,3 +280,20 @@ a:hover {
   align-items: center;
   justify-content: center;
 }
+
+/* Ícone de olho para mostrar/ocultar senha */
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    padding-right: 2.5em; /* Adiciona espaço para o ícone no lado direito */
+}
+
+.password-container i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
