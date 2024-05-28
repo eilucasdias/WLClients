@@ -1,3 +1,4 @@
+/* Estilos gerais do site */
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
@@ -9,6 +10,8 @@ body {
   height: 100vh;
   justify-content: center;
 }
+
+/* Estilos do formulário */
 form {
   max-width: 300px;
   margin: 0 auto;
@@ -49,9 +52,8 @@ button:hover {
   background-color: #84848486;
 }
 
-a {
+.link-menu {
   display: block;
-  margin-top: 1em;
   text-align: center;
   color: white;
   text-decoration: none;
@@ -61,6 +63,7 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Estilos específicos para o index.html */
 .login-group {
   width: 100%;
   display: flex;
@@ -90,7 +93,7 @@ a:hover {
   background-size: cover;
   width: 100%;
   height: 100vh;
-  background-image: url("/assets/img/ea-sports-fc-24-game.jpg");
+  background: #22313f;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,8 +124,9 @@ a:hover {
   border-radius: 10px;
   position: relative;
   color: white;
-  opacity: 1; /* Inicia com opacidade total */
+  opacity: 1;
 }
+
 #username,
 #password {
   outline: none;
@@ -140,7 +144,6 @@ a:hover {
 }
 
 /* 'Esqueceu a senha' */
-
 #background-emerges {
   position: fixed;
   top: 50%;
@@ -203,3 +206,37 @@ a:hover {
   border: 1px solid white;
   background-color: #5656561f;
 }
+
+/* Estilos do menu de navegação (index) */
+.menu {
+  background-color: #0C0C0C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 60px; /* Ajuste a altura conforme necessário */
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2em;
+}
+
+.menu a {
+  color: #8B8B8B;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #FAFAFA;
+}
+

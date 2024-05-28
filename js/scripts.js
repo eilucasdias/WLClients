@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const forgotPassword = document.getElementById("forgot-password");
   const boxForgotPassword = document.getElementById("box-forgot-password");
   const closeIcon = document.getElementById("close-icon");
+
   function validateInput(input) {
     if (input.value.trim() === "") {
       input.style.border = "1px solid red";
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return true;
     }
   }
+
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const isUsernameValid = validateInput(username);
@@ -31,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Preencha todos os campos.");
     }
   });
+
   forgotPassword.addEventListener("click", () => {
     loginForm.style.transition = "opacity 0.4s ease";
     loginForm.style.opacity = "0";
@@ -45,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 100);
     }, 100);
   });
+
   closeIcon.addEventListener("click", () => {
     boxForgotPassword.classList.remove("show");
     backgroundEmerges.classList.remove("show");
