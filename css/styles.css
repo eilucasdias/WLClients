@@ -77,6 +77,7 @@ a:hover {
   width: 100%;
   margin-top: 0.5em;
 }
+
 .google-signin-container .g-signin2 {
   width: 100% !important;
   display: flex !important;
@@ -152,6 +153,7 @@ a:hover {
 #forgot-password:hover {
   text-decoration: underline!important;
 }
+
 #background-emerges {
   position: fixed;
   top: 50%;
@@ -197,6 +199,7 @@ a:hover {
   align-items: center;
   justify-content: end;
 }
+
 #close-icon {
   font-size: 20px;
   padding: 10px;
@@ -241,6 +244,7 @@ a:hover {
   display: flex;
   gap: 2em;
 }
+
 .menu-link {
   color: #8b8b8b;
   transition: color 0.3s;
@@ -260,6 +264,7 @@ a:hover {
   height: 60px;
   width: 100%;
 }
+
 .butt-new-account {
   background-color: #252525;
   padding: 10px;
@@ -267,10 +272,12 @@ a:hover {
   color: #8b8b8b;
   transition: 0.2s;
 }
+
 .butt-new-account:hover {
   background-color: rgb(53, 53, 53);
   color: white;
 }
+
 .logo {
   background-color: #ffffffaf;
   width: 50px;
@@ -283,21 +290,22 @@ a:hover {
 
 /* Ícone de olho para mostrar/ocultar senha */
 .password-container {
-    position: relative;
+  position: relative;
 }
 
 .password-container input {
-    padding-right: 2.5em; /* Adiciona espaço para o ícone no lado direito */
+  padding-right: 2.5em; /* Adiciona espaço para o ícone no lado direito */
 }
 
 .password-container i {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
+/* Estilos do botão do WhatsApp */
 .whatsapp-button {
   display: flex;
   align-items: center;
@@ -326,4 +334,58 @@ a:hover {
 
 .whatsapp-button:hover {
   background-color: #1da851;
+}
+
+/* Estilos para a seção de produtos */
+#produtos {
+  margin-top: 50px;
+}
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.produto-item {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.produto-item img.profissional-img {
+  width: 190px; /* Ajuste o tamanho da imagem aqui */
+  height: 190px; /* Ajuste o tamanho da imagem aqui */
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.produto-item h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.produto-item p {
+  color: #666;
+}
+
+.ranking-options {
+  margin-top: 15px;
+}
+
+.ranking-options label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.ranking-options select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
