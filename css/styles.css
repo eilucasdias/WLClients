@@ -75,8 +75,8 @@ a:hover {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  margin-top: 0.5em;
 }
-
 .google-signin-container .g-signin2 {
   width: 100% !important;
   display: flex !important;
@@ -144,6 +144,14 @@ a:hover {
 }
 
 /* 'Esqueceu a senha' */
+#create-account,
+#forgot-password {
+  color: white;
+}
+#create-account:hover,
+#forgot-password:hover {
+  text-decoration: underline!important;
+}
 #background-emerges {
   position: fixed;
   top: 50%;
@@ -209,9 +217,9 @@ a:hover {
 
 /* Estilos do menu de navegação (index) */
 .menu {
-  background-color: #0C0C0C;
+  background-color: #0c0c0c;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 1em 0;
   position: fixed;
@@ -219,24 +227,56 @@ a:hover {
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 60px; /* Ajuste a altura conforme necessário */
+  height: 60px;
+  margin: 0 auto;
+  max-width: 1200px; /* Ajuste a altura conforme necessário */
 }
 
 .menu ul {
+  display: flex;
+  align-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   gap: 2em;
 }
-
-.menu a {
-  color: #8B8B8B;
-  text-decoration: none;
+.menu-link {
+  color: #8b8b8b;
   transition: color 0.3s;
 }
 
-.menu a:hover {
-  color: #FAFAFA;
+.menu-link:hover {
+  color: #fafafa;
 }
 
+.navbackground {
+  background-color: #0c0c0c;
+  padding: 1em 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  width: 100%;
+}
+.butt-new-account {
+  background-color: #252525;
+  padding: 10px;
+  border-radius: 10px;
+  color: #8b8b8b;
+  transition: 0.2s;
+}
+.butt-new-account:hover {
+  background-color: rgb(53, 53, 53);
+  color: white;
+}
+.logo {
+  background-color: #ffffffaf;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
