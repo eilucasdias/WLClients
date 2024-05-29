@@ -6,7 +6,8 @@
   <title>Meu Site</title>
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/styles.css" />
-  <script src="js/script.js" defer></script>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="js/scripts.js" defer></script>
 </head>
 <body>
   <div class="navbackground">
@@ -30,7 +31,6 @@
 
     <!-- Botão do WhatsApp -->
     <a href="https://wa.me/5547992772464" class="whatsapp-button" target="_blank">
-      <!-- SVG do ícone do WhatsApp aqui -->
       <span>Tire suas dúvidas</span>
     </a>
 
@@ -44,12 +44,13 @@
           <p>VERIFICADO</p>
           <h1>Disponível plataforma PS5</h1>
           <div class="ranking-options">
-            <label for="ranking1">Selecione um ranking:</label>
             <select id="ranking1" name="ranking">
+              <option value="principal">Selecione o ranking desejado</option>
               <option value="rank1">Rank 1 na WL = R$ 80,00 (20 vitórias)</option>
               <option value="rank2">Rank 2 na WL = R$ 65,00 (18 vitórias)</option>
               <option value="rank3">Rank 3 na WL = R$ 50,00 (16 vitórias)</option>
             </select>
+            <button class="buy-button" onclick="openModal('Lucas Dias Luiz')">Contratar</button>
           </div>
         </div>
         <div class="produto-item">
@@ -58,12 +59,13 @@
           <p>VERIFICADO</p>
           <h1>Disponível plataforma PC</h1>
           <div class="ranking-options">
-            <label for="ranking2">Selecione um ranking:</label>
             <select id="ranking2" name="ranking">
+              <option value="principal">Selecione o ranking desejado</option>
               <option value="rank1">Rank 1 na WL = R$ 80,00 (20 vitórias)</option>
               <option value="rank2">Rank 2 na WL = R$ 65,00 (18 vitórias)</option>
               <option value="rank3">Rank 3 na WL = R$ 50,00 (16 vitórias)</option>
             </select>
+            <button class="buy-button" onclick="openModal('Abner Pasternak')">Contratar</button>
           </div>
         </div>
         <div class="produto-item">
@@ -72,17 +74,40 @@
           <p>VERIFICADO</p>
           <h1>Disponível plataforma Xbox</h1>
           <div class="ranking-options">
-            <label for="ranking3">Selecione um ranking:</label>
             <select id="ranking3" name="ranking">
+              <option value="principal">Selecione o ranking desejado</option>
               <option value="rank1">Rank 1 na WL = R$ 80,00 (20 vitórias)</option>
               <option value="rank2">Rank 2 na WL = R$ 65,00 (18 vitórias)</option>
               <option value="rank3">Rank 3 na WL = R$ 50,00 (16 vitórias)</option>
             </select>
+            <button class="buy-button" onclick="openModal('Lucas Labatut')">Contratar</button>
           </div>
         </div>
-        <!-- Adicione mais produtos conforme necessário -->
       </div>
     </section>
+  </div>
+
+  <!-- Modal de Compra -->
+  <div id="modal-compra" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 class="modal-title">Formas de Pagamento</h2>
+      <form id="payment-form">
+        <label for="payment-method">Selecione a forma de pagamento:</label>
+        <select id="payment-method" name="payment-method" onchange="togglePaymentFields()">
+          <option value="">Selecione</option>
+          <option value="pix">PIX</option>
+        </select>
+
+        <!-- Campo do PIX -->
+        <div id="pix-fields" class="payment-fields" style="display: none;">
+          <p>Escaneie o QR Code abaixo para pagar com PIX:</p>
+          <img id="pix-qrcode" src="images/qrcode-pix_lucasdiasluiz.png" alt="QR Code PIX" />
+        </div>
+
+        <button type="submit">Finalizar Compra</button>
+      </form>
+    </div>
   </div>
 </body>
 </html>
