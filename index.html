@@ -1,226 +1,356 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meu Site</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/styles.css" />
-    <script src="https://www.paypal.com/sdk/js?client-id=AdHFLm5F0ao69bJaD8rVyUyLcaRmqam2IYGUF0hpuQXSjcauW7HVnE3QSo917K6JcSq9gQngRADgf4gd&currency=BRL" defer></script>
+    <script
+      src="https://www.paypal.com/sdk/js?client-id=AdHFLm5F0ao69bJaD8rVyUyLcaRmqam2IYGUF0hpuQXSjcauW7HVnE3QSo917K6JcSq9gQngRADgf4gd&currency=BRL"
+      defer
+    ></script>
     <script src="js/scripts.js" defer></script>
+    <script src="js/viewMore.js" defer></script>
     <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-    <div class="navbackground">
-        <nav class="menu">
-            <ul>
-                <div class="logo"></div>
-                <li><a class="menu-link" href="#inicio">Início</a></li>
-                <li><a class="menu-link" href="#equipe">Equipe</a></li>
-                <li><a class="menu-link" href="#contato">Contato</a></li>
-            </ul>
-            <ul>
-                <li>
-                    <div class="mode-toggle">
-                        <img id="mode-icon" src="assets/img/dark.png" alt="Toggle Dark Mode" />
-                    </div>
-                </li>
-                <li><a class="menu-link" onclick="openLogin()">Login</a></li>
-                <li><a class="butt-new-account" href="#login">Crie uma conta</a></li>
-            </ul>
-        </nav>
-    </div>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav class="menu">
+      <div class="navi-bar">
+        <ul>
+          <div class="logo"></div>
+          <li><a class="menu-link" href="#inicio">Início</a></li>
+          <li><a class="menu-link" href="#equipe">Equipe</a></li>
+          <li><a class="menu-link" href="#contato">Contato</a></li>
+        </ul>
+        <ul>
+          <li>
+            <div class="mode-toggle">
+              <img
+                id="mode-icon"
+                src="assets/img/dark.png"
+                alt="Toggle Dark Mode"
+              />
+            </div>
+          </li>
+          <li><a class="menu-link" onclick="openLogin()">Login</a></li>
+          <li><a class="butt-new-account" href="#login">Crie uma conta</a></li>
+        </ul>
+      </div>
+    </nav>
     <div class="container-inicio">
-        <h1>Bem-vindo ao Meu Site!</h1>
-        <p>Este é um site simples para começar a aprender desenvolvimento web.</p>
-        <a href="/pages/login.html" class="link">Ir para Login</a>
+      <a
+        href="https://wa.me/5547992772464"
+        class="whatsapp-button"
+        target="_blank"
+      >
+        <span>Tire suas dúvidas</span>
+      </a>
 
-        <!-- Botão do WhatsApp -->
-        <a href="https://wa.me/5547992772464" class="whatsapp-button" target="_blank">
-            <span>Tire suas dúvidas</span>
-        </a>
+      <!-- Seção de produtos -->
+      <section id="produtos">
+        <div class="backgr-fc24">
+          <div class="textfc24">
+            <h1>Opal - eCommerce Template</h1>
+            <br />
 
-        <!-- Seção de produtos -->
-        <section id="produtos">
-            <h2>Sem tempo para jogar? Contrate um profissional</h2>
-            <div class="produtos-flex">
-                <div class="produto-item">
-                    <img src="images/abner.jpg" alt="Profissional Abner Pasternak" class="profissional-img" />
-                    <h3>Profissional Abner Pasternak</h3>
-                    <p>VERIFICADO</p>
-                    <h1>Disponível plataforma PC</h1>
-                    <button class="consult-button" onclick="openProfileModal('Abner Pasternak')">Consultar</button>
-                </div>
-                <div class="produto-item">
-                    <img src="images/abner.jpg" alt="Profissional Abner Pasternak" class="profissional-img" />
-                    <h3>Profissional Abner Pasternak</h3>
-                    <p>VERIFICADO</p>
-                    <h1>Disponível plataforma PC</h1>
-                    <button class="consult-button" onclick="openProfileModal('Abner Pasternak')">Consultar</button>
-                </div>
-                <div class="produto-item">
-                    <img src="images/abner.jpg" alt="Profissional Abner Pasternak" class="profissional-img" />
-                    <h3>Profissional Abner Pasternak</h3>
-                    <p>VERIFICADO</p>
-                    <h1>Disponível plataforma PC</h1>
-                    <button class="consult-button" onclick="openProfileModal('Abner Pasternak')">Consultar</button>
-                </div>
-                <div class="produto-item">
-                    <img src="images/lucas_labatut.png" alt="Profissional Lucas Labatut" class="profissional-img" />
-                    <h3>Profissional Lucas Labatut</h3>
-                    <p>VERIFICADO</p>
-                    <h1>Disponível plataforma Xbox</h1>
-                    <button class="consult-button" onclick="openProfileModal('Lucas Labatut')">Consultar</button>
+            <div class="p-butt-fc24">
+                <p>
+                    Get your online store to the top of the market with this eCommerce
+                    template powered by Lemonsqueezy payment gateway.
+                  </p>
+      
+                  <button class="butt-fc24">Lorem ipsum</button>
                 </div>
             </div>
-        </section>
+          <div class="imgfc24">
+            <img src="images/fc24back.png" alt="" />
+          </div>
+        </div>
+        <div class="produtos-flex">
+          <div class="produto-item">
+            <h3>Profissional Lucas Dias</h3>
+            <p>VERIFICADO</p>
+            <h1>Disponível plataforma PC</h1>
+            <button
+              class="consult-button"
+              onclick="openProfileModal('Abner Pasternak')"
+            >
+              Consultar
+            </button>
+          </div>
+          <div class="produto-item">
+            <h3>Profissional Gabriela Mitie</h3>
+            <p>VERIFICADO</p>
+            <h1>Disponível plataforma PC</h1>
+            <button
+              class="consult-button"
+              onclick="openProfileModal('Abner Pasternak')"
+            >
+              Consultar
+            </button>
+          </div>
+          <div class="produto-item">
+            <h3>Profissional Abner Pasternak</h3>
+            <p>VERIFICADO</p>
+            <h1>Disponível plataforma PC</h1>
+            <button
+              class="consult-button"
+              onclick="openProfileModal('Abner Pasternak')"
+            >
+              Consultar
+            </button>
+          </div>
+          <div class="produto-item">
+            <h3>Profissional Lucas Labatut</h3>
+            <p>VERIFICADO</p>
+            <h1>Disponível plataforma Xbox</h1>
+            <button
+              class="consult-button"
+              onclick="openProfileModal('Lucas Labatut')"
+            >
+              Consultar
+            </button>
+          </div>
+        </div>
+        <div class="produtos-flex produtos-adicionais" style="display: none;">
+          <div class="produto-item">
+            <h3>Profissional Lucas Dias</h3>
+            <p>VERIFICADO</p>
+            <h1>Disponível plataforma PC</h1>
+            <button
+              class="consult-button"
+              onclick="openProfileModal('Abner Pasternak')"
+            >
+              Consultar
+            </button>
+          </div>
+          <div class="produto-item">
+            <h3>Profissional Gabriela Mitie</h3>
+            <p>VERIFICADO</p>
+            <h1>Disponível plataforma PC</h1>
+            <button
+              class="consult-button"
+              onclick="openProfileModal('Abner Pasternak')"
+            >
+              Consultar
+            </button>
+          </div>
+          <div class="produto-item">
+            <h3>Profissional Abner Pasternak</h3>
+            <p>VERIFICADO</p>
+            <h1>Disponível plataforma PC</h1>
+            <button
+              class="consult-button"
+              onclick="openProfileModal('Abner Pasternak')"
+            >
+              Consultar
+            </button>
+          </div>
+          <div class="produto-item">
+            <h3>Profissional Lucas Labatut</h3>
+            <p>VERIFICADO</p>
+            <h1>Disponível plataforma Xbox</h1>
+            <button
+              class="consult-button"
+              onclick="openProfileModal('Lucas Labatut')"
+            >
+              Consultar
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
-
+    <div class="verMais-container">
+        <button id="verMaisBtn">Ver Mais</button>
+    </div>
     <!-- Novo Modal para exibir o perfil do profissional -->
     <div id="modal-profile" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeProfileModal()">&times;</span>
-            <h2 class="modal-title">Perfil do Profissional</h2>
-            <img src="images/profile-placeholder.png" alt="Foto do Profissional" class="profile-img">
-            <div id="profile-details">
-                <!-- Informações do profissional serão carregadas aqui -->
-            </div>
-            <div class="rating-form">
-                <h3>Avalie o profissional</h3>
-                <div class="stars" id="rating-stars">
-                    <i class="fa fa-star" data-rating="1"></i>
-                    <i class="fa fa-star" data-rating="2"></i>
-                    <i class="fa fa-star" data-rating="3"></i>
-                    <i class="fa fa-star" data-rating="4"></i>
-                    <i class="fa fa-star" data-rating="5"></i>
-                </div>
-                <textarea id="review-comment" placeholder="Deixe seu comentário" style="resize: none; width: 100%;"></textarea>
-                <button onclick="submitReview()">Enviar Avaliação</button>
-            </div>
-            <button class="toggle-comments-button" onclick="toggleComments()">Exibir Comentários</button>
-            <div class="client-reviews" id="client-reviews" style="display: none; max-height: 200px; overflow-y: scroll;">
-                <h3>Avaliações dos Clientes</h3>
-                <div class="review">
-                    <p><strong>Comentário:</strong> Excelente profissional!</p>
-                    <div class="stars">
-                        <i class="fa fa-star filled"></i>
-                        <i class="fa fa-star filled"></i>
-                        <i class="fa fa-star filled"></i>
-                        <i class="fa fa-star filled"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <p class="review-date">Comentário realizado pelo cliente em 30/05/2024 14:30</p>
-                </div>
-            </div>
-            <div class="like-dislike-buttons">
-                <i class="fa fa-thumbs-up" onclick="likeReview(this)"><span class="like-count">0</span></i>
-                <i class="fa fa-thumbs-down" onclick="dislikeReview(this)"><span class="dislike-count">0</span></i>
-            </div>
-            <button class="hire-button" onclick="openHireModal()">Contratar</button>
+      <div class="modal-content">
+        <span class="close" onclick="closeProfileModal()">&times;</span>
+        <h2 class="modal-title">Perfil do Profissional</h2>
+        <img
+          src="images/profile-placeholder.png"
+          alt="Foto do Profissional"
+          class="profile-img"
+        />
+        <div id="profile-details">
+          <!-- Informações do profissional serão carregadas aqui -->
         </div>
+        <div class="rating-form">
+          <h3>Avalie o profissional</h3>
+          <div class="stars" id="rating-stars">
+            <i class="fa fa-star" data-rating="1"></i>
+            <i class="fa fa-star" data-rating="2"></i>
+            <i class="fa fa-star" data-rating="3"></i>
+            <i class="fa fa-star" data-rating="4"></i>
+            <i class="fa fa-star" data-rating="5"></i>
+          </div>
+          <textarea
+            id="review-comment"
+            placeholder="Deixe seu comentário"
+            style="resize: none; width: 100%"
+          ></textarea>
+          <button onclick="submitReview()">Enviar Avaliação</button>
+        </div>
+        <button class="toggle-comments-button" onclick="toggleComments()">
+          Exibir Comentários
+        </button>
+        <div
+          class="client-reviews"
+          id="client-reviews"
+          style="display: none; max-height: 200px; overflow-y: scroll"
+        >
+          <h3>Avaliações dos Clientes</h3>
+          <div class="review">
+            <p><strong>Comentário:</strong> Excelente profissional!</p>
+            <div class="stars">
+              <i class="fa fa-star filled"></i>
+              <i class="fa fa-star filled"></i>
+              <i class="fa fa-star filled"></i>
+              <i class="fa fa-star filled"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <p class="review-date">
+              Comentário realizado pelo cliente em 30/05/2024 14:30
+            </p>
+          </div>
+        </div>
+        <div class="like-dislike-buttons">
+          <i class="fa fa-thumbs-up" onclick="likeReview(this)"
+            ><span class="like-count">0</span></i
+          >
+          <i class="fa fa-thumbs-down" onclick="dislikeReview(this)"
+            ><span class="dislike-count">0</span></i
+          >
+        </div>
+        <button class="hire-button" onclick="openHireModal()">Contratar</button>
+      </div>
     </div>
 
     <div id="modal-compra" class="modal">
-        <div class="modal-content">
-            <h2 class="modal-title">Formas de Pagamento</h2>
-            <div class="payment-category">
-                <label for="boleto" class="boletoMethod">
-                    <div class="payment-imgName">
-                        <div class="payment-imgContainer boleto">
-                            <img src="images/boleto.svg" alt="Boleto" class="payment-img" />
-                        </div>
-                    </div>
-                </label>
-                <label for="pix" class="pixMethod" onclick="showPixQRCode()">
-                    <div class="payment-imgName">
-                        <div class="payment-imgContainer pix">
-                            <img src="images/pix.svg" alt="PIX" class="payment-img" />
-                        </div>
-                    </div>
-                </label>
-                <label for="credit" class="creditMethod">
-                    <div class="payment-imgName">
-                        <div class="payment-imgContainer credit">
-                            <img src="images/logo-visa_mastercard.svg" alt="Cartão de Crédito/Débito" class="payment-img" />
-                        </div>
-                    </div>
-                </label>
-                <label for="paypal" class="paypalMethod">
-                    <div class="payment-imgName">
-                        <div class="payment-imgContainer paypal">
-                            <img src="images/paypal.svg" alt="PayPal" class="payment-img" />
-                        </div>
-                    </div>
-                </label>
+      <div class="modal-content">
+        <h2 class="modal-title">Formas de Pagamento</h2>
+        <div class="payment-category">
+          <label for="boleto" class="boletoMethod">
+            <div class="payment-imgName">
+              <div class="payment-imgContainer boleto">
+                <img src="images/boleto.svg" alt="Boleto" class="payment-img" />
+              </div>
             </div>
-            <div id="pix-fields" class="payment-fields" style="display: none">
-                <p>Escaneie o QR Code abaixo para pagar com PIX:</p>
-                <img id="pix-qrcode" src="images/qrcode-pix_lucasdiasluiz.png" alt="QR Code PIX" />
+          </label>
+          <label for="pix" class="pixMethod" onclick="showPixQRCode()">
+            <div class="payment-imgName">
+              <div class="payment-imgContainer pix">
+                <img src="images/pix.svg" alt="PIX" class="payment-img" />
+              </div>
             </div>
-            <button class="finalize-button" type="button">Finalizar Compra</button>
+          </label>
+          <label for="credit" class="creditMethod">
+            <div class="payment-imgName">
+              <div class="payment-imgContainer credit">
+                <img
+                  src="images/logo-visa_mastercard.svg"
+                  alt="Cartão de Crédito/Débito"
+                  class="payment-img"
+                />
+              </div>
+            </div>
+          </label>
+          <label for="paypal" class="paypalMethod">
+            <div class="payment-imgName">
+              <div class="payment-imgContainer paypal">
+                <img src="images/paypal.svg" alt="PayPal" class="payment-img" />
+              </div>
+            </div>
+          </label>
         </div>
+        <div id="pix-fields" class="payment-fields" style="display: none">
+          <p>Escaneie o QR Code abaixo para pagar com PIX:</p>
+          <img
+            id="pix-qrcode"
+            src="images/qrcode-pix_lucasdiasluiz.png"
+            alt="QR Code PIX"
+          />
+        </div>
+        <button class="finalize-button" type="button">Finalizar Compra</button>
+      </div>
     </div>
 
     <!-- Rodapé -->
     <div class="rodape">
-        <div class="rodape-conteudo">
-            <h2>Contato</h2>
-            <p>Email: contato@meusite.com</p>
-            <p>Telefone: (00) 1234-5678</p>
-            <p>Endereço: Rua Exemplo, 123, Cidade, Estado</p>
-        </div>
+      <div class="rodape-conteudo">
+        <h2>Contato</h2>
+        <p>Email: contato@meusite.com</p>
+        <p>Telefone: (00) 1234-5678</p>
+        <p>Endereço: Rua Exemplo, 123, Cidade, Estado</p>
+      </div>
     </div>
-    <div onclick="remove()" class="background-login" id="background-login"></div>
+    <div
+      onclick="remove()"
+      class="background-login"
+      id="background-login"
+    ></div>
     <div class="login-container">
-        <form class="login-form" id="login-form">
-            <div class="mov-fa-xmark">
-                <i onclick="closeLogin()" class="fas fa-xmark"></i>
-            </div>
-            <p class="p-enter">Entrar</p>
-            <div class="login-group">
-                <label for="username">Usuário</label>
-                <input type="text" id="username" name="username" required /><br />
-            </div>
-            <div class="login-group">
-                <label for="password">Senha</label>
-                <input type="password" id="password" name="password" required />
-                <i class="fas fa-eye" id="toggle-password"></i>
-            </div>
-            <button type="submit">Entrar</button>
-            <div class="google-signin-container">
-                <div class="g-signin2 google-signin2" data-onsuccess="onSignIn"></div>
-            </div>
+      <form class="login-form" id="login-form">
+        <div class="mov-fa-xmark">
+          <i onclick="closeLogin()" class="fas fa-xmark"></i>
+        </div>
+        <p class="p-enter">Entrar</p>
+        <div class="login-group">
+          <label for="username">Usuário</label>
+          <input type="text" id="username" name="username" required /><br />
+        </div>
+        <div class="login-group">
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="password" required />
+          <i class="fas fa-eye" id="toggle-password"></i>
+        </div>
+        <button type="submit">Entrar</button>
+        <div class="google-signin-container">
+          <div class="g-signin2 google-signin2" data-onsuccess="onSignIn"></div>
+        </div>
 
-            <div class="box-google">
-                <i class="fa-brands fa-google-plus-g"></i>
-                <p class="enter-google">Entrar com Google</p>
-                <i style="visibility: hidden" class="fa-brands fa-google-plus-g"></i>
-            </div>
-            <div class="linha"></div>
-            <div class="account-management">
-                <a href="#" id="create-account" class="link">Criar conta</a><br />
-                <a href="#" id="forgot-password" class="link">Esqueceu a senha?</a>
-            </div>
-        </form>
+        <div class="box-google">
+          <i class="fa-brands fa-google-plus-g"></i>
+          <p class="enter-google">Entrar com Google</p>
+          <i style="visibility: hidden" class="fa-brands fa-google-plus-g"></i>
+        </div>
+        <div class="linha"></div>
+        <div class="account-management">
+          <a href="#" id="create-account" class="link">Criar conta</a><br />
+          <a href="#" id="forgot-password" class="link">Esqueceu a senha?</a>
+        </div>
+      </form>
     </div>
     <div id="background-emerges">
-        <div id="box-forgot-password">
-            <div class="delet-move">
-                <i class="fas fa-times" id="close-icon"></i>
-            </div>
+      <div id="box-forgot-password">
+        <div class="delet-move">
+          <i class="fas fa-times" id="close-icon"></i>
         </div>
+      </div>
     </div>
     <script src="/js/scripts.js"></script>
     <script>
-        const passwordField = document.getElementById("password");
-        const togglePasswordButton = document.getElementById("toggle-password");
+      const passwordField = document.getElementById("password");
+      const togglePasswordButton = document.getElementById("toggle-password");
 
-        togglePasswordButton.addEventListener("click", function () {
-            const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
-            passwordField.setAttribute("type", type);
-            this.classList.toggle("fa-eye-slash");
-        });
+      togglePasswordButton.addEventListener("click", function () {
+        const type =
+          passwordField.getAttribute("type") === "password"
+            ? "text"
+            : "password";
+        passwordField.setAttribute("type", type);
+        this.classList.toggle("fa-eye-slash");
+      });
     </script>
-</body>
+    
+  </body>
 </html>

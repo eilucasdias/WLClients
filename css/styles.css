@@ -1,7 +1,7 @@
 /* Estilos gerais do site */
 body {
   font-family: Arial, sans-serif;
-  background-color: #0D0D0D;
+  background-color: #0d0d0d;
   color: #fffffe;
   margin: 0;
   padding: 0;
@@ -12,16 +12,39 @@ body {
 .container-inicio {
   display: flex;
   align-items: center;
-  flex-direction: column;
-  padding-top: 150px;
+  justify-content: space-between;
   margin: 0 auto;
   max-width: 1200px;
+  padding-top: 115px;
 }
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
 }
-
+.backgr-fc24 {
+  width: 100%;
+  border: 1px solid #2c2c2cb1;
+  background-color: #1a1a1a;
+  height: 250px;
+  border-radius: 17px;
+  display: flex;
+  justify-content: space-between;
+}
+.textfc24 {
+  max-width: 400px;
+  text-align: start;
+  padding: 25px;
+}
+.p-butt-fc24 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 81%;
+}
+.imgfc24 img {
+  opacity: 0.2;
+  border-radius: 20px;
+}
 /* Estilos do formulário */
 form {
   max-width: 300px;
@@ -58,27 +81,10 @@ body.dark-mode input {
   border: 1px solid #ffffff28;
   color: #e0e0e0;
 }
-
-button {
-  padding: 0.5em;
-  background-color: #7f5af0;
-  color: #fffffe;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  transition: 0.2s;
-}
-
 body.dark-mode button {
   background-color: #606060;
   color: #e0e0e0;
 }
-
-button:hover {
-  background-color: #5e3dbb;
-}
-
 body.dark-mode button:hover {
   background-color: #505050;
 }
@@ -287,7 +293,7 @@ a:hover {
 
 /* Estilos do menu de navegação (index) */
 .menu {
-  background-color: #1C1C1C;
+  background-color: #141414;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -298,8 +304,7 @@ a:hover {
   right: 0;
   z-index: 1000;
   height: 60px;
-  margin: 0 auto;
-  max-width: 1200px; /* Ajuste a altura conforme necessário */
+  border-bottom: 1px solid #2c2c2c;
 }
 
 body.dark-mode .menu {
@@ -333,22 +338,6 @@ body.dark-mode .menu-link {
 body.dark-mode .menu-link:hover {
   color: #ffffff;
 }
-
-.navbackground {
-  background-color: #1C1C1C;
-  padding: 1em 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  width: 100%;
-}
-
-body.dark-mode .navbackground {
-  background-color: #1e1e1e;
-}
-
 .butt-new-account {
   background-color: #252525;
   padding: 10px;
@@ -356,7 +345,14 @@ body.dark-mode .navbackground {
   color: #8b8b8b;
   transition: 0.2s;
 }
-
+.navi-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px; /* Ajuste a altura conforme necessário */
+}
 body.dark-mode .butt-new-account {
   background-color: #3c3c3c;
   color: #e0e0e0;
@@ -436,12 +432,14 @@ body.dark-mode .logo {
 
 /* Estilos para a seção de produtos */
 #produtos {
-  margin-top: 50px;
+  text-align: center; /* Centraliza o conteúdo */
+  width: 100%;
+  gap: 20px;
+  display: grid;
 }
 
 .produtos-flex {
   display: flex;
-  flex-direction: row;
   gap: 20px;
 }
 
@@ -451,24 +449,18 @@ body.dark-mode .produto-item {
 }
 
 .produto-item {
-  background-color: #1C1C1C;
-  padding: 20px;
-  border: 1px solid #2c2c2c;
-  border-radius: 5px;
-  text-align: center;
-  width: 200px;
-}
-.profissional-img {
-display: none;
-  height: 200px;
-}
-.produto-item img.profissional-img {
-  border-radius: 5%;
-  margin-bottom: 15px;
+  border-radius: 17px;
+  flex: 1;
+  border: 1px solid #2c2c2cb1;
+  background-color: #1a1a1a;
+  height: 170px;
+  padding: 25px; /* Adiciona um espaço interno */
+  text-align: center; /* Centraliza o conteúdo dentro dos itens */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
-  height: 190px;
 }
-
 .produto-item h3 {
   margin-top: 0;
   color: #fffffe;
@@ -714,7 +706,7 @@ body.dark-mode .mode-toggle img {
 }
 
 .rodape {
-  background-color: rgb(28, 28, 28);
+  background-color: #1a1a1a;
   border-top-left-radius: 17px;
   border-top-right-radius: 17px;
   opacity: 1;
@@ -723,9 +715,24 @@ body.dark-mode .mode-toggle img {
   justify-content: space-between;
   margin: 0 auto;
   max-width: 1200px;
-  border: 1px solid #2c2c2c;
+  border: 1px solid #1a1a1a;
+  margin-top: 20px;
 }
-
+.verMais-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#verMaisBtn {
+  text-align: center;
+  background-color: #313131;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 40px 0px 20px 0px;
+}
 .rodape-conteudo {
   display: flex;
   flex-direction: column;
@@ -743,19 +750,22 @@ body.dark-mode .mode-toggle img {
 .rodape-conteudo p {
   margin: 0;
 }
-
+.butt-fc24 {
+  width: 170px;
+  height: 40px;
+}
 /* Estilos para o botão "Consultar" */
-.consult-button {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #2c2c2c;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.consult-button,
+.butt-fc24 {
+  background-color: #313131; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto do botão */
+  border: none; /* Remove a borda do botão */
+  padding: 10px 20px; /* Adiciona preenchimento interno ao botão */
+  cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+  border-radius: 5px; /* Adiciona borda arredondada */
 }
 .consult-button:hover {
-  background-color: #404040;
+  background-color: #3c3c3c; /* Cor de fundo do botão ao passar o mouse */
 }
 body.dark-mode .consult-button {
   background-color: #2c2c2c;
