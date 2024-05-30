@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const serviceFee = document.getElementById("service-fee")?.value; // Pega a taxa de serviço
   let paypalButtonsRendered = false;
 
   function openModal(profissional) {
@@ -29,13 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function selectPaymentMethod(method) {
     resetPaymentFields();
-    
+
     if (method === "pix") {
       document.getElementById("pix-fields").style.display = "block";
     } else if (method === "credit" || method === "debit") {
       const paypalContainer = document.getElementById("paypal-button-container");
       paypalContainer.style.display = "block";
-      
+
       if (!paypalButtonsRendered) {
         // Renderiza o botão do PayPal uma vez
         paypal.Buttons({
@@ -43,12 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const rankingSelect = document.querySelector('select[name="ranking"]');
             const selectedOption = rankingSelect.options[rankingSelect.selectedIndex].text;
             const amount = parseFloat(selectedOption.match(/R\$ ([0-9,]+).*/)[1].replace(",", "."));
-            const totalAmount = amount + (amount * serviceFee / 100);
 
             return actions.order.create({
               purchase_units: [{
                 amount: {
-                  value: totalAmount.toFixed(2) // Total do cliente
+                  value: amount.toFixed(2) // Total do cliente
                 },
                 description: `Pagamento para ${rankingSelect.name}, ${selectedOption}`
               }]
@@ -57,14 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
           onApprove: function (data, actions) {
             return actions.order.capture().then(function (details) {
               alert('Transação concluída por ' + details.payer.name.given_name);
-
-              // Aqui você pode implementar a lógica para enviar a parte do profissional
-              const rankingSelect = document.querySelector('select[name="ranking"]');
-              const selectedOption = rankingSelect.options[rankingSelect.selectedIndex].text;
-              const amount = parseFloat(selectedOption.match(/R\$ ([0-9,]+).*/)[1].replace(",", "."));
-              const professionalAmount = amount - (amount * serviceFee / 100);
-              
-              console.log(`Valor para o profissional: R$ ${professionalAmount.toFixed(2)}`);
 
               closeModal();
             });
@@ -80,6 +70,14 @@ document.addEventListener("DOMContentLoaded", () => {
     button.addEventListener('click', (event) => {
       event.stopPropagation();
     });
+  });
+
+  // Função para alternar entre modo claro e escuro
+  const modeToggle = document.querySelector('.mode-toggle');
+  const body = document.body;
+
+  modeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
   });
 
   // Expondo as funções de abrir e fechar modal globalmente
