@@ -1,18 +1,22 @@
 /* Estilos gerais do site */
 body {
   font-family: Arial, sans-serif;
-  background-color: #16161a;
+  background-color: #0D0D0D;
   color: #fffffe;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   height: 100vh;
   justify-content: center;
   transition: background-color 0.3s, color 0.3s;
 }
-
+.container-inicio {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 150px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
@@ -51,12 +55,12 @@ input {
 
 body.dark-mode input {
   background: #2b2b2b;
-  border: 1px solid #555;
+  border: 1px solid #ffffff28;
   color: #e0e0e0;
 }
 
 button {
-  padding: 0.7em;
+  padding: 0.5em;
   background-color: #7f5af0;
   color: #fffffe;
   border: none;
@@ -102,7 +106,6 @@ a:hover {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  margin-top: 0.5em;
 }
 
 .google-signin-container .g-signin2 {
@@ -110,57 +113,93 @@ a:hover {
   display: flex !important;
   justify-content: center !important;
 }
-
-.login-google {
-  margin: 30px 0px 30px 0px;
-  color: #ffffff8a;
-}
-
 .background-login {
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  height: 100vh;
-  background: #22313f;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  position: relative;
-  z-index: 0;
-}
-
-.background-login::before {
-  content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #00000077;
-  z-index: 1;
+  backdrop-filter: blur(40px);
+  display: none;
+  background-color: #00000076;
 }
-
+.login-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.client-reviews {
+  overflow-x: none;
+}
 #login-form {
   backdrop-filter: blur(20px);
-  background: transparent;
-  border: 1px solid #ffffff5d;
-  background-color: #00000057;
+  border: 1px solid #ffffff28;
+  background-color: #242629;
   color: black;
-  z-index: 2;
-  padding: 20px;
+  padding: 25px;
+  width: 1000px;
   border-radius: 10px;
   position: relative;
   color: white;
   opacity: 1;
 }
-
+.p-enter {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+.mov-fa-xmark {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  width: 100%;
+}
+.fa-xmark {
+  font-size: 25px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.1s;
+}
+.fa-xmark:hover {
+  opacity: 1;
+}
+.box-google {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ff4747;
+  color: white;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 1em;
+}
+.ou {
+  margin: 15px 0px 15px 0px;
+}
+.linha {
+  width: 100%;
+  margin: 1em 0em 1em 0em;
+  border-top: 1px solid #ffffff28;
+}
+.fa-google-plus-g {
+  padding: 7px;
+  color: white;
+  font-size: 25px;
+  transition: 0.2s;
+}
+.enter-google {
+  padding: 7px;
+}
 #username,
 #password {
   outline: none;
   opacity: 0.9;
   background-color: #0000001f;
-  border: 1px solid rgba(255, 255, 255, 0.445);
+  border: 1px solid #ffffff28;
   color: white;
   transition: 0.2s;
 }
@@ -174,11 +213,12 @@ a:hover {
 /* 'Esqueceu a senha' */
 #create-account,
 #forgot-password {
-  color: white;
+  color: #8b8b8b;
 }
 #create-account:hover,
 #forgot-password:hover {
-  text-decoration: underline!important;
+  text-decoration: underline !important;
+  color: white;
 }
 
 #background-emerges {
@@ -247,7 +287,7 @@ a:hover {
 
 /* Estilos do menu de navegação (index) */
 .menu {
-  background-color: #242629;
+  background-color: #1C1C1C;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -279,6 +319,7 @@ body.dark-mode .menu {
 .menu-link {
   color: #8b8b8b;
   transition: color 0.3s;
+  cursor: pointer;
 }
 
 body.dark-mode .menu-link {
@@ -294,7 +335,7 @@ body.dark-mode .menu-link:hover {
 }
 
 .navbackground {
-  background-color: #242629;
+  background-color: #1C1C1C;
   padding: 1em 0;
   position: fixed;
   top: 0;
@@ -398,12 +439,10 @@ body.dark-mode .logo {
   margin-top: 50px;
 }
 
-.produtos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.produtos-flex {
+  display: flex;
+  flex-direction: row;
   gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 body.dark-mode .produto-item {
@@ -412,18 +451,22 @@ body.dark-mode .produto-item {
 }
 
 .produto-item {
-  background-color: #242629;
+  background-color: #1C1C1C;
   padding: 20px;
-  border: 3px solid #000000;
+  border: 1px solid #2c2c2c;
   border-radius: 5px;
   text-align: center;
+  width: 200px;
 }
-
+.profissional-img {
+display: none;
+  height: 200px;
+}
 .produto-item img.profissional-img {
-  width: 190px; /* Ajuste o tamanho da imagem aqui */
-  height: 190px; /* Ajuste o tamanho da imagem aqui */
-  border-radius: 50%;
+  border-radius: 5%;
   margin-bottom: 15px;
+  width: 100%;
+  height: 190px;
 }
 
 .produto-item h3 {
@@ -530,19 +573,17 @@ body.dark-mode .close:focus {
 .buy-button {
   margin-top: 10px;
   padding: 10px;
-  background-color: #7f5af0;
+  background-color: #2c2c2c;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
-
-body.dark-mode .buy-button {
-  background-color: #5e3dbb;
-}
-
 .buy-button:hover {
-  background-color: #5e3dbb;
+  background-color: #404040;
+}
+body.dark-mode .buy-button {
+  background-color: #2c2c2c;
 }
 
 body.dark-mode .buy-button:hover {
@@ -677,10 +718,12 @@ body.dark-mode .mode-toggle img {
   border-top-left-radius: 17px;
   border-top-right-radius: 17px;
   opacity: 1;
-  padding: 24px 24px 36px;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+  border: 1px solid #2c2c2c;
 }
 
 .rodape-conteudo {
@@ -690,6 +733,7 @@ body.dark-mode .mode-toggle img {
   max-width: 966px;
   width: 100%;
   color: #fff;
+  padding: 20px;
 }
 
 .rodape-conteudo h2 {
@@ -698,4 +742,123 @@ body.dark-mode .mode-toggle img {
 
 .rodape-conteudo p {
   margin: 0;
+}
+
+/* Estilos para o botão "Consultar" */
+.consult-button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #2c2c2c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.consult-button:hover {
+  background-color: #404040;
+}
+body.dark-mode .consult-button {
+  background-color: #2c2c2c;
+}
+body.dark-mode .consult-button:hover {
+  background-color: #3e2899;
+}
+
+/* Estilos para o novo modal de perfil */
+#modal-profile .modal-content {
+  background-color: #242629;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+body.dark-mode #modal-profile .modal-content {
+  background-color: #2b2b2b;
+  border: 1px solid #555;
+}
+.hire-button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #7f5af0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+body.dark-mode .hire-button {
+  background-color: #5e3dbb;
+}
+.hire-button:hover {
+  background-color: #5e3dbb;
+}
+body.dark-mode .hire-button:hover {
+  background-color: #3e2899;
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.status-indicator.online {
+  background-color: green;
+}
+.status-indicator.offline {
+  background-color: red;
+}
+
+/* Estilos para estrelas de avaliação */
+#rating-stars .fa-star {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+#rating-stars .fa-star.filled {
+  color: gold;
+}
+
+/* Estilos para o textarea de comentários */
+textarea#review-comment {
+  resize: none;
+  width: 100%;
+}
+
+/* Estilos para os comentários */
+.client-reviews {
+  max-height: 200px;
+  overflow-y: scroll;
+}
+.client-reviews .review {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+.client-reviews .review .stars {
+  display: flex;
+}
+.client-reviews .review .review-date {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* Estilos para botões de curtidas e não curtidas */
+.like-dislike-buttons i {
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.like-dislike-buttons i:hover {
+  color: #7f5af0;
+}
+.like-dislike-buttons .like-count,
+.like-dislike-buttons .dislike-count {
+  font-size: 18px;
+  margin-left: 5px;
 }
