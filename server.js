@@ -13,8 +13,8 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'sua_senha',
-  database: 'meu_site'
+  password: '!Sql@developer10',  // Substitua pela sua senha do MySQL
+  database: 'wlclients'
 });
 
 // Conectar ao banco de dados
@@ -35,6 +35,23 @@ app.post('/register', (req, res) => {
       return res.status(500).send('Erro ao registrar usuário');
     }
     res.send('Usuário registrado com sucesso');
+  });
+});
+
+// Configurar rota para autenticar usuário
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+  const sql = 'SELECT * FROM usuarios WHERE email = ? AND senha = ?';
+  
+  db.query(sql, [email, password], (err, results) => {
+    if (err) {
+      return res.status(500).send('Erro ao autenticar usuário');
+    }
+    if (results.length > 0) {
+      res.send('Usuário autenticado com sucesso');
+    } else {
+      res.status(401).send('Credenciais inválidas');
+    }
   });
 });
 

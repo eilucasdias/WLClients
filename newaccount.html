@@ -34,7 +34,8 @@
     </nav>
     <div class="container-create-account">
         <h1>Criar Conta</h1>
-        <form class="create-account-form" id="create-account-form" action="/register" method="POST">            <div class="form-group">
+        <form class="create-account-form" id="create-account-form" action="http://localhost:3000/register" method="POST">
+            <div class="form-group">
                 <label for="nome">Nome Completo</label>
                 <input type="text" id="nome" name="nome" required>
             </div>
@@ -85,9 +86,6 @@
             <div class="form-group">
                 <label for="confirmarSenha">Confirmar Senha</label>
                 <input type="password" id="confirmarSenha" name="confirmarSenha" required>
-            </div>
-            <div class="form-group">
-                <span id="error-message" class="error-message"></span>
             </div>
             <button type="submit">Criar Conta</button>
         </form>
