@@ -872,3 +872,40 @@ textarea#review-comment {
   font-size: 18px;
   margin-left: 5px;
 }
+
+/* Estilos para o formulário de criação de conta */
+.container-create-account {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2em;
+  background-color: #242629;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-account-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-account-form .form-group {
+  margin-bottom: 1em;
+}
+
+.create-account-form label {
+  margin-bottom: 0.5em;
+  color: #fff;
+}
+
+.create-account-form input {
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Estilos para a mensagem de erro */
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  display: none;
+}

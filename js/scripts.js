@@ -61,9 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (method === "pix") {
       document.getElementById("pix-fields").style.display = "block";
     } else if (method === "credit" || method === "debit") {
-      const paypalContainer = document.getElementById(
-        "paypal-button-container"
-      );
+      const paypalContainer = document.getElementById("paypal-button-container");
       paypalContainer.style.display = "block";
 
       if (!paypalButtonsRendered) {
@@ -71,14 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
         paypal
           .Buttons({
             createOrder: function (data, actions) {
-              const rankingSelect = document.querySelector(
-                'select[name="ranking"]'
-              );
-              const selectedOption =
-                rankingSelect.options[rankingSelect.selectedIndex].text;
-              const amount = parseFloat(
-                selectedOption.match(/R\$ ([0-9,]+).*/)[1].replace(",", ".")
-              );
+              const rankingSelect = document.querySelector('select[name="ranking"]');
+              const selectedOption = rankingSelect.options[rankingSelect.selectedIndex].text;
+              const amount = parseFloat(selectedOption.match(/R\$ ([0-9,]+).*/)[1].replace(",", "."));
 
               return actions.order.create({
                 purchase_units: [
@@ -93,10 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             onApprove: function (data, actions) {
               return actions.order.capture().then(function (details) {
-                alert(
-                  "Transação concluída por " + details.payer.name.given_name
-                );
-
+                alert("Transação concluída por " + details.payer.name.given_name);
                 closeModal();
               });
             },
@@ -174,9 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Função para enviar uma avaliação
   function submitReview() {
     const comment = document.getElementById("review-comment").value;
-    const rating = document.querySelectorAll(
-      "#rating-stars .fa-star.filled"
-    ).length;
+    const rating = document.querySelectorAll("#rating-stars .fa-star.filled").length;
     const clientName = "Nome do Cliente"; // Pode ser recuperado de um campo de login, por exemplo
 
     const newReview = `
@@ -190,23 +178,16 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
 
-    document
-      .querySelector("#client-reviews")
-      .insertAdjacentHTML("beforeend", newReview);
+    document.querySelector("#client-reviews").insertAdjacentHTML("beforeend", newReview);
     document.getElementById("review-comment").value = "";
-    document
-      .querySelectorAll("#rating-stars .fa-star")
-      .forEach((star) => star.classList.remove("filled"));
+    document.querySelectorAll("#rating-stars .fa-star").forEach((star) => star.classList.remove("filled"));
   }
 
   // Função para exibir/ocultar comentários
   function toggleComments() {
     const clientReviews = document.getElementById("client-reviews");
     const toggleButton = document.querySelector(".toggle-comments-button");
-    if (
-      clientReviews.style.display === "none" ||
-      clientReviews.style.display === ""
-    ) {
+    if (clientReviews.style.display === "none" || clientReviews.style.display === "") {
       clientReviews.style.display = "block";
       toggleButton.textContent = "Ocultar Comentários";
     } else {
@@ -242,4 +223,20 @@ document.addEventListener("DOMContentLoaded", () => {
   window.toggleComments = toggleComments;
   window.likeReview = likeReview;
   window.dislikeReview = dislikeReview;
+  
+  // Validação das senhas no formulário de criação de conta
+  const form = document.getElementById("create-account-form");
+  const senhaInput = document.getElementById("senha");
+  const confirmarSenhaInput = document.getElementById("confirmarSenha");
+  const errorMessage = document.getElementById("error-message");
+
+  form.addEventListener("submit", (event) => {
+    if (senhaInput.value !== confirmarSenhaInput.value) {
+      event.preventDefault();
+      errorMessage.textContent = "As senhas não coincidem. Por favor, verifique.";
+      errorMessage.style.display = "block";
+    } else {
+      errorMessage.style.display = "none";
+    }
+  });
 });
