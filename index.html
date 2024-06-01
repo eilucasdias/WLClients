@@ -11,7 +11,7 @@
       defer
     ></script>
     <script src="js/scripts.js" defer></script>
-    <script src="js/viewMore.js" defer></script>
+    <script src="js/aurora.js" defer></script>
     <!-- Font Awesome CDN -->
     <link
       rel="stylesheet"
@@ -22,6 +22,13 @@
     />
   </head>
   <body>
+    <video
+      class="video-aurora"
+      id="auroraVideo"
+      src="/assets/video/auroray.mp4"
+      autoplay
+      loop
+    ></video>
     <nav class="menu">
       <div class="navi-bar">
         <ul>
@@ -41,7 +48,11 @@
             </div>
           </li>
           <li><a class="menu-link" onclick="openLogin()">Login</a></li>
-          <li><a class="butt-new-account" href="newaccount.html">Crie uma conta</a></li>
+          <li>
+            <a class="butt-new-account" href="newaccount.html"
+              >Crie uma conta</a
+            >
+          </li>
         </ul>
       </div>
     </nav>
@@ -62,14 +73,14 @@
             <br />
 
             <div class="p-butt-fc24">
-                <p>
-                    Get your online store to the top of the market with this eCommerce
-                    template powered by Lemonsqueezy payment gateway.
-                  </p>
-      
-                  <button class="butt-fc24">Lorem ipsum</button>
-                </div>
+              <p>
+                Get your online store to the top of the market with this
+                eCommerce template powered by Lemonsqueezy payment gateway.
+              </p>
+
+              <button class="butt-fc24">Lorem ipsum</button>
             </div>
+          </div>
           <div class="imgfc24">
             <img src="images/fc24back.png" alt="" />
           </div>
@@ -120,56 +131,20 @@
             </button>
           </div>
         </div>
-        <div class="produtos-flex produtos-adicionais" style="display: none;">
-          <div class="produto-item">
-            <h3>Profissional Lucas Dias</h3>
-            <p>VERIFICADO</p>
-            <h1>Disponível plataforma PC</h1>
-            <button
-              class="consult-button"
-              onclick="openProfileModal('Abner Pasternak')"
-            >
-              Consultar
-            </button>
+        <div class="line-btn-container">
+          <div class="line-container">
+            <div class="line1"></div>
+            <div class="line1 li1"></div>
+            <div class="line1"></div>
           </div>
-          <div class="produto-item">
-            <h3>Profissional Gabriela Mitie</h3>
-            <p>VERIFICADO</p>
-            <h1>Disponível plataforma PC</h1>
-            <button
-              class="consult-button"
-              onclick="openProfileModal('Abner Pasternak')"
-            >
-              Consultar
-            </button>
-          </div>
-          <div class="produto-item">
-            <h3>Profissional Abner Pasternak</h3>
-            <p>VERIFICADO</p>
-            <h1>Disponível plataforma PC</h1>
-            <button
-              class="consult-button"
-              onclick="openProfileModal('Abner Pasternak')"
-            >
-              Consultar
-            </button>
-          </div>
-          <div class="produto-item">
-            <h3>Profissional Lucas Labatut</h3>
-            <p>VERIFICADO</p>
-            <h1>Disponível plataforma Xbox</h1>
-            <button
-              class="consult-button"
-              onclick="openProfileModal('Lucas Labatut')"
-            >
-              Consultar
-            </button>
+          <button id="verMaisBtn">Ver Mais</button>
+          <div class="line-container">
+            <div class="line2"></div>
+            <div class="line2 li2"></div>
+            <div class="line2"></div>
           </div>
         </div>
       </section>
-    </div>
-    <div class="verMais-container">
-        <button id="verMaisBtn">Ver Mais</button>
     </div>
     <!-- Novo Modal para exibir o perfil do profissional -->
     <div id="modal-profile" class="modal">
@@ -351,6 +326,5 @@
         this.classList.toggle("fa-eye-slash");
       });
     </script>
-    
   </body>
 </html>
