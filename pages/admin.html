@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <nav class="menu">
+        <div class="navi-bar">
+            <ul>
+                <li><a class="menu-link" href="../index.html">Início</a></li>
+                <li><a class="menu-link" href="../index.html#equipe">Equipe</a></li>
+                <li><a class="menu-link" href="../index.html#contato">Contato</a></li>
+                <li><a class="menu-link" href="profile.html">Perfil</a></li>
+                <li><a class="menu-link" href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-profile">
+        <h1>Administração</h1>
+        <table id="usersTable">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>Endereço</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Os dados dos usuários serão preenchidos aqui -->
+            </tbody>
+        </table>
+    </div>
+    <div class="rodape">
+        <div class="rodape-conteudo">
+            <h2>Contato</h2>
+            <p>Email: contato@meusite.com</p>
+            <p>Telefone: (00) 1234-5678</p>
+            <p>Endereço: Rua Exemplo, 123, Cidade, Estado</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/admin/users')
+                .then(response => response.json())
+                .then(data => {
+                    const usersTableBody = document.getElementById('usersTable').getElementsByTagName('tbody')[0];
+                    data.forEach(user => {
+                        const row = usersTableBody.insertRow();
+                        row.insertCell(0).textContent = user.nome;
+                        row.insertCell(1).textContent = user.email;
+                        row.insertCell(2).textContent = user.telefone;
+                        row.insertCell(3).textContent = user.endereco;
+                        const actionsCell = row.insertCell(4);
+
+                        const editButton = document.createElement('button');
+                        editButton.textContent = 'Editar';
+                        editButton.addEventListener('click', () => editUser(user.id)); // Usar ID
+                        actionsCell.appendChild(editButton);
+
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = 'Excluir';
+                        deleteButton.addEventListener('click', () => deleteUser(user.id)); // Usar ID
+                        actionsCell.appendChild(deleteButton);
+                    });
+                })
+                .catch(error => console.error('Erro ao carregar usuários:', error));
+        });
+
+        function editUser(id) {
+            // Redirecionar para uma página de edição ou abrir um modal de edição
+            // Aqui vamos redirecionar para uma página de edição (edit-user.html)
+            window.location.href = `edit-user.html?id=${id}`;
+        }
+
+        function deleteUser(id) {
+            if (confirm('Tem certeza de que deseja excluir este usuário?')) {
+                fetch(`/admin/users/${id}`, {
+                    method: 'DELETE'
+                })
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);
+                    window.location.reload(); // Recarregar a página após a exclusão
+                })
+                .catch(error => console.error('Erro ao excluir usuário:', error));
+            }
+        }
+    </script>
+</body>
+</html>

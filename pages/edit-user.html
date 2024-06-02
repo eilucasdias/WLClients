@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuário</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <nav class="menu">
+        <div class="navi-bar">
+            <ul>
+                <li><a class="menu-link" href="../index.html">Início</a></li>
+                <li><a class="menu-link" href="../index.html#equipe">Equipe</a></li>
+                <li><a class="menu-link" href="../index.html#contato">Contato</a></li>
+                <li><a class="menu-link" href="profile.html">Perfil</a></li>
+                <li><a class="menu-link" href="admin.html">Administração</a></li>
+                <li><a class="menu-link" href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="admin-container">
+        <h1>Editar Usuário</h1>
+        <form id="edit-user-form">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required readonly>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" name="telefone" required>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required>
+            </div>
+            <button type="submit">Salvar Alterações</button>
+        </form>
+    </div>
+    <div class="rodape">
+        <div class="rodape-conteudo">
+            <h2>Contato</h2>
+            <p>Email: contato@meusite.com</p>
+            <p>Telefone: (00) 1234-5678</p>
+            <p>Endereço: Rua Exemplo, 123, Cidade, Estado</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            fetch(`/admin/users/${id}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('nome').value = data.nome;
+                    document.getElementById('email').value = data.email;
+                    document.getElementById('telefone').value = data.telefone;
+                    document.getElementById('endereco').value = data.endereco;
+                })
+                .catch(error => console.error('Erro ao carregar dados do usuário:', error));
+
+            document.getElementById('edit-user-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const nome = document.getElementById('nome').value;
+                const email = document.getElementById('email').value;
+                const telefone = document.getElementById('telefone').value;
+                const endereco = document.getElementById('endereco').value;
+
+                fetch('/admin/edit-user', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ id, nome, email, telefone, endereco })
+                })
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);
+                    window.location.href = 'admin.html';
+                })
+                .catch(error => console.error('Erro ao editar usuário:', error));
+            });
+        });
+    </script>
+</body>
+</html>
