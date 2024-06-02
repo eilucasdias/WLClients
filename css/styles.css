@@ -147,9 +147,9 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(40px);
   display: none;
-  background-color: #00000098;
+  background-color: #00000076;
 }
 
 .login-container {
@@ -166,12 +166,8 @@ a:hover {
 
 #login-form {
   backdrop-filter: blur(20px);
-  border: 1px solid #2c2c2cb1;
-  background: linear-gradient(
-    153deg,
-    rgb(17, 17, 17) 0%,
-    rgba(37, 37, 37, 1) 100%
-  );
+  border: 1px solid #ffffff28;
+  background-color: #242629;
   color: black;
   padding: 25px;
   width: 1000px;
@@ -239,24 +235,20 @@ a:hover {
   padding: 7px;
 }
 
-#email,
+#username,
 #password {
   outline: none;
   opacity: 0.9;
   background-color: #0000001f;
-  border: 1px solid #2c2c2cb1;
+  border: 1px solid #ffffff28;
   color: white;
   transition: 0.2s;
 }
 
-#email:focus,
+#username:focus,
 #password:focus {
-  border: 1px solid #4b4b4bb1;
-  background-color: #5858581f;
-}
-
-#password {
-  padding-right: 39px;
+  border: 1px solid white;
+  background-color: #5656561f;
 }
 
 /* 'Esqueceu a senha' */
@@ -270,11 +262,7 @@ a:hover {
   text-decoration: underline !important;
   color: white;
 }
-#toggle-password {
-  position: relative;
-  bottom: 28px;
-  left: 270px;
-}
+
 #background-emerges {
   position: fixed;
   top: 50%;
@@ -353,6 +341,7 @@ a:hover {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1000;
   height: 60px;
   border-bottom: 1px solid #2c2c2c;
 }
@@ -436,13 +425,28 @@ body.dark-mode .logo {
 }
 
 /* Ícone de olho para mostrar/ocultar senha */
+.password-container {
+  position: relative;
+}
+
+.password-container input {
+  padding-right: 2.5em; /* Adiciona espaço para o ícone no lado direito */
+}
+
+.password-container i {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
 
 /* Estilos do botão do WhatsApp */
 .whatsapp-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(90deg, rgb(59, 59, 59) 0%, rgb(31, 31, 31) 100%);
+  background-color: #2cb67d;
   color: white;
   width: auto; /* Ajustado para caber o texto */
   height: 60px; /* buttonSize: 'large' */
@@ -450,38 +454,20 @@ body.dark-mode .logo {
   padding: 0 20px; /* Adiciona espaço ao redor do texto */
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s;
   position: fixed;
   bottom: 20px; /* buttonPosition: 'right' */
   right: 20px; /* buttonPosition: 'right' */
   margin: 10px; /* buttonMargin: 'true' */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-.fa-whatsapp {
-  font-size: 25px;
-  margin-right: 15px;
-}
-.butt-login {
-  background-color: #313131;
-  border: none;
-  color: white;
-  width: 100%;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.2s;
-  padding: 9px 0;
-}
-.butt-login:hover {
-  background-color: #3c3c3c;
-}
+
 .whatsapp-button svg {
   width: 22px; /* buttonIconSize: '22' */
   height: 22px; /* buttonIconSize: '22' */
   margin-right: 10px; /* Espaço entre o ícone e o texto */
 }
-.whatsapp-button img {
-  height: 40px;
-  margin-right: 10px;
-}
+
 .whatsapp-button:hover {
   background-color: #23915e;
 }
@@ -574,15 +560,16 @@ body.dark-mode .ranking-options select {
   overflow: auto;
   background-color: #00000066;
 }
+
 body.dark-mode .modal {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modal-content {
-  background-color: #1a1a1a;
+  background-color: #242629;
   margin: 5% auto;
   padding: 20px;
-  border: 1px solid #2c2c2cb1;
+  border: 1px solid #888;
   width: 80%;
   max-width: 500px;
   border-radius: 10px;
@@ -678,6 +665,7 @@ body.dark-mode .payment-fields p {
 .payment-category label {
   height: 145px;
   padding: 20px;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -686,13 +674,6 @@ body.dark-mode .payment-fields p {
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  background-color: #1e1e1e;
-  border: 1px solid #2c2c2cb1;
-  transition: 0.2s;
-}
-.payment-category label:hover {
-  background-color: #252525;
-  border: 1px solid #424242b1;
 }
 
 body.dark-mode .payment-category label {
@@ -729,7 +710,7 @@ body.dark-mode .payment-category label {
 .finalize-button {
   margin-top: 20px;
   padding: 10px;
-  background-color: #313131;
+  background-color: #7f5af0;
   color: white;
   border: none;
   border-radius: 5px;
@@ -742,14 +723,9 @@ body.dark-mode .payment-category label {
 body.dark-mode .finalize-button {
   background-color: #5e3dbb;
 }
-#pix-fields p {
-  margin-top: 20px;
-}
-#pix-qrcode {
-  margin-bottom: initial;
-}
+
 .finalize-button:hover {
-  background-color: #3c3c3c;
+  background-color: #5e3dbb;
 }
 
 body.dark-mode .finalize-button:hover {
@@ -892,12 +868,7 @@ body.dark-mode .consult-button {
 body.dark-mode .consult-button:hover {
   background-color: #3e2899;
 }
-.modal-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
+
 /* Estilos para o novo modal de perfil */
 #modal-profile .modal-content {
   background-color: #1a1a1a;
@@ -918,13 +889,13 @@ body.dark-mode #modal-profile .modal-content {
 .hire-button {
   margin-top: 20px;
   padding: 10px;
-  background-color: #313131;
+  background-color: #7f5af0;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s;
   text-align: center;
 }
 
@@ -933,7 +904,7 @@ body.dark-mode .hire-button {
 }
 
 .hire-button:hover {
-  background-color: #3c3c3c;
+  background-color: #5e3dbb;
 }
 
 body.dark-mode .hire-button:hover {
