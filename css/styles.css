@@ -9,6 +9,7 @@ body {
   justify-content: center;
   transition: background-color 0.3s, color 0.3s;
 }
+
 .container-inicio {
   display: flex;
   align-items: center;
@@ -17,6 +18,7 @@ body {
   max-width: 1200px;
   padding-top: 115px;
 }
+
 .video-aurora {
   width: 100%;
   height: 100%;
@@ -24,10 +26,12 @@ body {
   opacity: 0.13;
   z-index: -1;
 }
+
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
 }
+
 .backgr-fc24 {
   width: 100%;
   border: 1px solid #2c2c2cb1;
@@ -37,24 +41,29 @@ body.dark-mode {
   display: flex;
   justify-content: space-between;
 }
+
 .textfc24 h1 {
   font-size: 20px;
 }
+
 .textfc24 {
   max-width: 400px;
   text-align: start;
   padding: 25px;
 }
+
 .p-butt-fc24 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 81%;
 }
+
 .imgfc24 img {
   opacity: 0.2;
   border-radius: 20px;
 }
+
 /* Estilos do formulário */
 form {
   max-width: 300px;
@@ -91,10 +100,12 @@ body.dark-mode input {
   border: 1px solid #ffffff28;
   color: #e0e0e0;
 }
+
 body.dark-mode button {
   background-color: #606060;
   color: #e0e0e0;
 }
+
 body.dark-mode button:hover {
   background-color: #505050;
 }
@@ -129,6 +140,7 @@ a:hover {
   display: flex !important;
   justify-content: center !important;
 }
+
 .background-login {
   position: fixed;
   top: 0;
@@ -139,6 +151,7 @@ a:hover {
   display: none;
   background-color: #00000076;
 }
+
 .login-container {
   position: fixed;
   top: 50%;
@@ -146,9 +159,11 @@ a:hover {
   transform: translate(-50%, -50%);
   display: none;
 }
+
 .client-reviews {
   overflow-x: none;
 }
+
 #login-form {
   backdrop-filter: blur(20px);
   border: 1px solid #ffffff28;
@@ -161,26 +176,31 @@ a:hover {
   color: white;
   opacity: 1;
 }
+
 .p-enter {
   font-size: 25px;
   font-weight: 600;
   margin-bottom: 25px;
 }
+
 .mov-fa-xmark {
   display: flex;
   justify-content: end;
   align-items: end;
   width: 100%;
 }
+
 .fa-xmark {
   font-size: 25px;
   cursor: pointer;
   opacity: 0.5;
   transition: 0.1s;
 }
+
 .fa-xmark:hover {
   opacity: 1;
 }
+
 .box-google {
   display: flex;
   align-items: center;
@@ -193,23 +213,28 @@ a:hover {
   transition: 0.2s;
   margin-top: 1em;
 }
+
 .ou {
   margin: 15px 0px 15px 0px;
 }
+
 .linha {
   width: 100%;
   margin: 1em 0em 1em 0em;
   border-top: 1px solid #ffffff28;
 }
+
 .fa-google-plus-g {
   padding: 7px;
   color: white;
   font-size: 25px;
   transition: 0.2s;
 }
+
 .enter-google {
   padding: 7px;
 }
+
 #username,
 #password {
   outline: none;
@@ -231,6 +256,7 @@ a:hover {
 #forgot-password {
   color: #8b8b8b;
 }
+
 #create-account:hover,
 #forgot-password:hover {
   text-decoration: underline !important;
@@ -274,9 +300,11 @@ a:hover {
   opacity: 1;
   display: block;
 }
+
 #box-forgot-password.show {
   opacity: 1;
 }
+
 .delet-move {
   display: flex;
   align-items: center;
@@ -295,6 +323,7 @@ a:hover {
   cursor: pointer;
   transition: 0.2s;
 }
+
 #close-icon:hover {
   color: white;
   border: 1px solid white;
@@ -348,6 +377,7 @@ body.dark-mode .menu-link {
 body.dark-mode .menu-link:hover {
   color: #ffffff;
 }
+
 .butt-new-account {
   background-color: #252525;
   padding: 10px;
@@ -355,6 +385,7 @@ body.dark-mode .menu-link:hover {
   color: #8b8b8b;
   transition: 0.2s;
 }
+
 .navi-bar {
   display: flex;
   align-items: center;
@@ -363,6 +394,7 @@ body.dark-mode .menu-link:hover {
   margin: 0 auto;
   max-width: 1200px; /* Ajuste a altura conforme necessário */
 }
+
 body.dark-mode .butt-new-account {
   background-color: #3c3c3c;
   color: #e0e0e0;
@@ -471,6 +503,7 @@ body.dark-mode .produto-item {
   justify-content: space-between;
   width: 100%;
 }
+
 .produto-item h3 {
   margin-top: 0;
   color: #fffffe;
@@ -580,9 +613,11 @@ body.dark-mode .close:focus {
   border-radius: 5px;
   cursor: pointer;
 }
+
 .buy-button:hover {
   background-color: #404040;
 }
+
 body.dark-mode .buy-button {
   background-color: #2c2c2c;
 }
@@ -713,20 +748,24 @@ body.dark-mode .finalize-button:hover {
 body.dark-mode .mode-toggle img {
   filter: invert(0%); /* Remover a inversão no modo escuro */
 }
+
 .video-aurora {
   width: 100vw; /* 100% da largura da janela de visualização */
   height: auto; /* A altura será ajustada automaticamente */
 }
+
 .line-btn-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .line-container {
   display: flex;
   flex-direction: column;
   width: 100px;
 }
+
 .line1,
 .line2 {
   background-color: #2c2c2cb1;
@@ -734,6 +773,7 @@ body.dark-mode .mode-toggle img {
   width: 100%;
   border-radius: 17px;
 }
+
 .rodape {
   background-color: #1a1a1a;
   border-top-left-radius: 17px;
@@ -748,18 +788,22 @@ body.dark-mode .mode-toggle img {
   border-right: 1px solid #2c2c2cb1;
   border-top: 1px solid #2c2c2cb1;
 }
+
 .li1,
 .li2 {
   margin: 7px 0px 7px 0px;
 }
+
 .li1 {
   position: relative;
   right: 10px;
 }
+
 .li2 {
   position: relative;
   left: 10px;
 }
+
 #verMaisBtn {
   text-align: center;
   background-color: #2c2c2cb1;
@@ -772,9 +816,11 @@ body.dark-mode .mode-toggle img {
   margin: 0px 20px 0px 20px;
   transition: 0.2s;
 }
+
 #verMaisBtn:hover {
   background-color: #313131;
 }
+
 .rodape-conteudo {
   display: flex;
   flex-direction: column;
@@ -792,10 +838,12 @@ body.dark-mode .mode-toggle img {
 .rodape-conteudo p {
   margin: 0;
 }
+
 .butt-fc24 {
   width: 170px;
   height: 40px;
 }
+
 /* Estilos para o botão "Consultar" */
 .consult-button,
 .butt-fc24 {
@@ -807,13 +855,16 @@ body.dark-mode .mode-toggle img {
   border-radius: 5px; /* Adiciona borda arredondada */
   transition: 0.2s;
 }
+
 .consult-button:hover,
 .butt-fc24:hover {
   background-color: #3c3c3c; /* Cor de fundo do botão ao passar o mouse */
 }
+
 body.dark-mode .consult-button {
   background-color: #2c2c2c;
 }
+
 body.dark-mode .consult-button:hover {
   background-color: #3e2899;
 }
@@ -829,10 +880,12 @@ body.dark-mode .consult-button:hover {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 body.dark-mode #modal-profile .modal-content {
   background-color: #2b2b2b;
   border: 1px solid #555;
 }
+
 .hire-button {
   margin-top: 20px;
   padding: 10px;
@@ -845,12 +898,15 @@ body.dark-mode #modal-profile .modal-content {
   transition: background-color 0.3s;
   text-align: center;
 }
+
 body.dark-mode .hire-button {
   background-color: #5e3dbb;
 }
+
 .hire-button:hover {
   background-color: #5e3dbb;
 }
+
 body.dark-mode .hire-button:hover {
   background-color: #3e2899;
 }
@@ -861,9 +917,11 @@ body.dark-mode .hire-button:hover {
   height: 10px;
   border-radius: 50%;
 }
+
 .status-indicator.online {
   background-color: green;
 }
+
 .status-indicator.offline {
   background-color: red;
 }
@@ -875,6 +933,7 @@ body.dark-mode .hire-button:hover {
   cursor: pointer;
   transition: color 0.2s;
 }
+
 #rating-stars .fa-star.filled {
   color: gold;
 }
@@ -890,13 +949,16 @@ textarea#review-comment {
   max-height: 200px;
   overflow-y: scroll;
 }
+
 .client-reviews .review {
   border-bottom: 1px solid #ccc;
   padding: 10px 0;
 }
+
 .client-reviews .review .stars {
   display: flex;
 }
+
 .client-reviews .review .review-date {
   font-size: 12px;
   color: #aaa;
@@ -908,9 +970,11 @@ textarea#review-comment {
   cursor: pointer;
   margin-right: 10px;
 }
+
 .like-dislike-buttons i:hover {
   color: #7f5af0;
 }
+
 .like-dislike-buttons .like-count,
 .like-dislike-buttons .dislike-count {
   font-size: 18px;
@@ -952,4 +1016,133 @@ textarea#review-comment {
   color: red;
   font-size: 0.9em;
   display: none;
+}
+
+/* Estilos específicos para o profile.html */
+.container-profile {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em;
+  background: #242629;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .container-profile {
+  background: #1e1e1e;
+}
+
+.profile-details {
+  margin-top: 1em;
+}
+
+.profile-details p {
+  margin: 0.5em 0;
+}
+
+/* Adicionar o rodapé à página de perfil */
+.container-profile {
+  margin-bottom: 2em; /* Adicionar margem inferior para o rodapé */
+}
+
+.profile-details {
+  text-align: left;
+  color: #e0e0e0;
+}
+
+body.dark-mode .profile-details p {
+  color: #aaaaaa;
+}
+
+/* Estilos para os botões do formulário de edição de perfil */
+.form-group {
+  margin-bottom: 1em;
+}
+
+button[type="submit"] {
+  background-color: #7f5af0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #5e3dbb;
+}
+
+body.dark-mode button[type="submit"] {
+  background-color: #5e3dbb;
+}
+
+body.dark-mode button[type="submit"]:hover {
+  background-color: #3e2899;
+}
+
+/* Estilos para a página de administração */
+.admin-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em;
+  background: #242629;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .admin-container {
+  background: #1e1e1e;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+.admin-table th, .admin-table td {
+  padding: 10px;
+  border: 1px solid #2c2c2cb1;
+  text-align: left;
+}
+
+.admin-table th {
+  background-color: #313131;
+  color: #fff;
+}
+
+body.dark-mode .admin-table th {
+  background-color: #3e3e3e;
+}
+
+.admin-table td {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+body.dark-mode .admin-table td {
+  background-color: #2b2b2b;
+}
+
+.admin-table button {
+  background-color: #7f5af0;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.admin-table button:hover {
+  background-color: #5e3dbb;
+}
+
+body.dark-mode .admin-table button {
+  background-color: #5e3dbb;
+}
+
+body.dark-mode .admin-table button:hover {
+  background-color: #3e2899;
 }

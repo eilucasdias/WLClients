@@ -239,5 +239,79 @@ document.addEventListener("DOMContentLoaded", () => {
       errorMessage.style.display = "none";
     }
   });
-});
 
+  // Função para abrir o modal de esqueci a senha
+  function openForgotPasswordModal() {
+    const modal = document.getElementById("box-forgot-password");
+    modal.style.display = "block";
+    document.getElementById("background-emerges").style.display = "block";
+  }
+
+  // Função para abrir o modal de redefinição de senha
+  function openResetPasswordModal() {
+    const modal = document.getElementById("box-reset-password");
+    modal.style.display = "block";
+    document.getElementById("background-emerges").style.display = "block";
+  }
+
+  // Função para fechar todos os modais de esqueci/redefinição de senha
+  function closePasswordModals() {
+    document.getElementById("box-forgot-password").style.display = "none";
+    document.getElementById("box-reset-password").style.display = "none";
+    document.getElementById("background-emerges").style.display = "none";
+  }
+
+  // Adicionar evento para o link de esqueci a senha
+  document.getElementById("forgot-password").addEventListener("click", openForgotPasswordModal);
+  document.querySelectorAll("#close-icon").forEach(icon => icon.addEventListener("click", closePasswordModals));
+
+  // Enviar código de redefinição de senha
+  document.getElementById("forgot-password-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const email = document.getElementById("reset-email").value;
+
+    fetch('/forgot-password', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert('Código enviado para o email fornecido');
+        closePasswordModals();
+        openResetPasswordModal();
+      } else {
+        alert('Erro ao enviar código');
+      }
+    })
+    .catch(error => console.error('Erro ao enviar código:', error));
+  });
+
+  // Redefinir senha
+  document.getElementById("reset-password-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const code = document.getElementById("reset-code").value;
+    const newPassword = document.getElementById("new-password").value;
+
+    fetch('/reset-password', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ code, newPassword })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert('Senha redefinida com sucesso');
+        closePasswordModals();
+      } else {
+        alert('Erro ao redefinir senha');
+      }
+    })
+    .catch(error => console.error('Erro ao redefinir senha:', error));
+  });
+});

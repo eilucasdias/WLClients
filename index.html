@@ -303,14 +303,37 @@
           <a href="#" id="forgot-password" class="link">Esqueceu a senha?</a>
         </div>
       </form>
-    </div>    
-      </form>
-    </div>    
+    </div>
     <div id="background-emerges">
       <div id="box-forgot-password">
         <div class="delet-move">
-          <i class="fas fa-times" id="close-icon"></i>
+          <i class="fas fa-times" id="close-icon-forgot"></i>
         </div>
+        <h2>Esqueceu a senha?</h2>
+        <form id="forgot-password-form">
+          <div class="form-group">
+            <label for="reset-email">Digite seu e-mail:</label>
+            <input type="email" id="reset-email" required />
+          </div>
+          <button type="submit">Enviar código</button>
+        </form>
+      </div>
+      <div id="box-reset-password">
+        <div class="delet-move">
+          <i class="fas fa-times" id="close-icon-reset"></i>
+        </div>
+        <h2>Redefinir Senha</h2>
+        <form id="reset-password-form">
+          <div class="form-group">
+            <label for="reset-code">Código:</label>
+            <input type="text" id="reset-code" required />
+          </div>
+          <div class="form-group">
+            <label for="new-password">Nova senha:</label>
+            <input type="password" id="new-password" required />
+          </div>
+          <button type="submit">Redefinir senha</button>
+        </form>
       </div>
     </div>
     <script src="/js/scripts.js"></script>
