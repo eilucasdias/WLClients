@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Função para abrir o modal de pagamento
   function openModal(profissional) {
-    const modal = document.getElementById("modal-compra");
-    modal.style.display = "block";
+    const modalCompra = document.getElementById("modal-compra");
+    modalCompra.style.display = "block";
     resetPaymentFields();
   }
 
@@ -32,8 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
     modalCompra.style.display = "none"
     backgroundLogin.style.display = "none";
     loginContainer.style.display = "none";
-    const modal = document.querySelector("#modal-profile");
-    modal.style.display = "none"
+    const modalProfile = document.querySelector("#modal-profile");
+    modalProfile.style.display = "none"
     
   }
   // Função para fechar o modal de pagamento
@@ -108,20 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Função para alternar entre modo claro e escuro
-  const modeToggle = document.querySelector(".mode-toggle");
-  const body = document.body;
-  const modeIcon = document.getElementById("mode-icon");
-
-  modeToggle.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-    if (body.classList.contains("dark-mode")) {
-      modeIcon.src = "assets/img/light.png"; // Substitua pelo ícone de modo claro
-    } else {
-      modeIcon.src = "assets/img/dark.png"; // Substitua pelo ícone de modo escuro
-    }
-  });
-
   // Função para abrir o modal de perfil do profissional
   function openProfileModal(professionalName) {
     // Carregar as informações do profissional
@@ -134,8 +120,8 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
     // Abrir o modal
-    const modal = document.getElementById("modal-profile");
-    modal.style.display = "block";
+    const modalProfile = document.getElementById("modal-profile");
+    modalProfile.style.display = "block";
 
     // Configurar estrelas clicáveis
     const stars = document.querySelectorAll("#rating-stars .fa-star");
@@ -158,8 +144,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Função para abrir o modal de contratação
   function openHireModal() {
-    const modal = document.getElementById("modal-compra");
-    modal.style.display = "block";
+    const modalCompra = document.getElementById("modal-compra");
+    modalCompra.style.display = "block";
   }
 
   // Função para enviar uma avaliação
@@ -240,4 +226,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-

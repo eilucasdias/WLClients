@@ -12,6 +12,7 @@
     ></script>
     <script src="js/scripts.js" defer></script>
     <script src="js/aurora.js" defer></script>
+    <script src="js/darkMode.js" defer></script>
     <!-- Font Awesome CDN -->
     <link
       rel="stylesheet"
@@ -40,13 +41,9 @@
         <ul>
           <li>
             <div class="mode-toggle">
-              <img
-                id="mode-icon"
-                src="assets/img/dark.png"
-                alt="Toggle Dark Mode"
-              />
+              <img id="mode-icon" src="assets/img/light.png" alt="Toggle Dark Mode" onclick="toggleDarkMode()">
             </div>
-          </li>
+          </li>          
           <li><a class="menu-link" onclick="openLogin()">Login</a></li>
           <li>
             <a class="butt-new-account" href="newaccount.html"
@@ -144,9 +141,9 @@
       </section>
     </div>
     <!-- Novo Modal para exibir o perfil do profissional -->
-    <div id="modal-profile" class="modal">
+      <div onclick="fechar()"  id="modal-profile" class="modal">
         <div class="modal-container">
-          <div class="modal-content">
+          <div onclick="event.stopPropagation()" class="modal-content">
             <div class="mov-fa-xmark">
               <i onclick="fechar()" class="fas fa-xmark"></i>
             </div>
@@ -210,11 +207,10 @@
             <button class="hire-button" onclick="openHireModal()">Contratar</button>
           </div>
         </div>
-    </div>
-
+      </div>
     <div id="modal-compra" class="modal">
-      <div class="modal-container">
-        <div class="modal-content">
+      <div onclick="fechar()" class="modal-compra-container">
+        <div onclick="event.stopPropagation()" class="modal-content">
           <div class="mov-fa-xmark">
             <i onclick="fechar()" class="fas fa-xmark"></i>
           </div>
