@@ -25,13 +25,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Função para fechar a tela de login
-  function closeLogin() {
+  function fechar() {
     const backgroundLogin = document.querySelector(".background-login");
     const loginContainer = document.querySelector(".login-container");
+    const modalCompra = document.querySelector("#modal-compra");
+    modalCompra.style.display = "none"
     backgroundLogin.style.display = "none";
     loginContainer.style.display = "none";
+    const modal = document.querySelector("#modal-profile");
+    modal.style.display = "none"
+    
   }
-
   // Função para fechar o modal de pagamento
   function closeModal() {
     const backgroundLogin = document.getElementById("background-login");
@@ -150,10 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Função para fechar o modal de perfil do profissional
-  function closeProfileModal() {
-    const modal = document.getElementById("modal-profile");
-    modal.style.display = "none";
-  }
+
 
   // Função para abrir o modal de contratação
   function openHireModal() {
@@ -214,10 +215,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.selectPaymentMethod = selectPaymentMethod;
   window.showPixQRCode = showPixQRCode;
   window.openLogin = openLogin;
-  window.closeLogin = closeLogin;
+  window.fechar = fechar;
   window.remove = remove;
   window.openProfileModal = openProfileModal;
-  window.closeProfileModal = closeProfileModal;
   window.openHireModal = openHireModal;
   window.submitReview = submitReview;
   window.toggleComments = toggleComments;
